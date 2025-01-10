@@ -1,69 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>仿 Windows 桌面</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
   <div id="desktop">
     <!-- 图标 -->
-    <div class="icon" style="top: 50px; left: 50px;" onclick="openWindow('我的电脑', '这里是我的电脑内容')">
+    <div class="icon" draggable="true" style="top: 50px; left: 50px;" data-id="mycomputer" onclick="openWindow('我的电脑', '这里是我的电脑内容')">
       <img src="assets/this_pc.png" alt="My Computer">
       <p>我的电脑</p>
     </div>
-    <div class="icon" style="top: 150px; left: 50px;" onclick="openWindow('回收站', '这里是回收站内容')">
+    <div class="icon" draggable="true" style="top: 150px; left: 50px;" data-id="recyclebin" onclick="openWindow('回收站', '这里是回收站内容')">
       <img src="assets/recycle_bin.png" alt="Recycle Bin">
       <p>回收站</p>
     </div>
-    <div class="icon" style="top: 50px; left: 150px;" onclick="openWindow('网络', '这里是网络内容')">
+    <div class="icon" draggable="true" style="top: 50px; left: 150px;" data-id="network" onclick="openWindow('网络', '这里是网络内容')">
       <img src="assets/network.png" alt="Network">
       <p>网络</p>
     </div>
-    <div class="icon" style="top: 150px; left: 150px;" onclick="openWindow('用户文件夹', '这里是用户文件夹内容')">
+    <div class="icon" draggable="true" style="top: 150px; left: 150px;" data-id="userfolder" onclick="openWindow('用户文件夹', '这里是用户文件夹内容')">
       <img src="assets/user_folder.png" alt="User Folder">
       <p>用户文件夹</p>
     </div>
   </div>
 
-  <!-- 任务栏 -->
-  <div id="taskbar">
-    <button class="start-button" onclick="toggleStartMenu()">
-        <img src="assets/windows_logo.png" alt="Start" style="height: 20px; vertical-align: middle;">
-    </button>
-    <div id="taskbar-icons"></div>
-    <div id="taskbar-right">
-        <span id="time"></span>
-    </div>
+  <!-- 右键菜单 -->
+  <div id="contextMenu" class="hidden">  {{ edit_2 }}
+    <div onclick="refreshDesktop()">刷新</div>
+    <div onclick="arrangeIcons()">排列图标</div>
   </div>
-
-  <!-- 开始菜单 -->
-  <div id="startMenu">
-    <div id="startMenuHeader">
-        <img src="assets/user_avatar.png" alt="User Avatar" style="height: 30px; margin-right: 10px;">
-        <span>用户名</span>
-    </div>
-    <input type="text" placeholder="搜索" id="startMenuSearch">
-    <ul>
-      <li onclick="openWindow('文件资源管理器', '这里是文件资源管理器内容')">文件资源管理器</li>
-      <li onclick="openWindow('设置', '这里是设置内容')">设置</li>
-      <li onclick="openWindow('控制面板', '这里是控制面板内容')">控制面板</li>
-      <li onclick="closeAllWindows()">关闭</li>
-    </ul>
-  </div>
-
-  <!-- 动态弹窗 -->
-  <div id="popupWindow" class="hidden">
-    <div id="popupContent">
-      <div id="popupHeader">
-        <h3 id="popupTitle"></h3>
-        <button onclick="closeWindow()">×</button>
-      </div>
-      <div id="popupBody"></div>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
-</body>
-</html>
