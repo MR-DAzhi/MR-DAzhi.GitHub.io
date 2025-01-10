@@ -56,18 +56,6 @@ body {
     cursor: pointer;
 }
 
-#taskbar-icons {
-    display: flex;
-    align-items: center;
-    margin-left: 10px;
-}
-
-.taskbar-icon {
-    height: 30px;
-    margin-right: 5px;
-    cursor: pointer;
-}
-
 #taskbar-right {
     display: flex;
     align-items: center;
