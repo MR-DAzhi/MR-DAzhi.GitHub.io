@@ -174,9 +174,6 @@ function openSelfIntroductionFromMenu() {
     popupTitle.textContent = '关于 MR-DAzhi';
     popupBody.innerHTML = openSelfIntroduction();
     popupWindow.style.display = 'block';
-
-    const mrdazhiMenu = document.getElementById('mrdazhi-menu');
-    mrdazhiMenu.style.display = 'none';
 }
 
 // 为开始菜单项添加点击事件处理程序
@@ -195,6 +192,5 @@ document.querySelector('#startMenu ul li[data-id="controlpanel"]').addEventListe
 // 为 MR-DAzhi 添加左键点击事件处理程序
 document.getElementById('startMenuHeader').addEventListener('click', (e) => {
     e.stopPropagation();
-    const mrdazhiMenu = document.getElementById('mrdazhi-menu');
-    mrdazhiMenu.style.display = 'block';
+    openSelfIntroductionFromMenu();
 });
