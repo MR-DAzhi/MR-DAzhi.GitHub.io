@@ -10,7 +10,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-image: url('win.jpg'); /* 替换为您的背景图片 */
+    background-image: url('win.jpg'); /* 修改这里 */ {{ edit_1 }}
     background-size: cover;
     background-position: center;
 }
