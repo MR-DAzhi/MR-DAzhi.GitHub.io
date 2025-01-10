@@ -197,3 +197,12 @@ body {
     z-index: 103;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
+
+#mrdazhi-menu-content div {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+#mrdazhi-menu-content div:hover {
+    background-color: #f0f0f0;
+}
