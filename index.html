@@ -8,7 +8,29 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <div class="desktop">
+    <div class="loading-screen">
+        <div class="windows-logo">
+            <i class="fab fa-apple"></i>
+        </div>
+        <div class="loading-bar">
+            <div class="progress"></div>
+        </div>
+    </div>
+    <div class="login-screen"> {{ edit_2 }}
+        <div class="login-box">
+            <div class="user-avatar">
+                <i class="fas fa-user-circle"></i>
+            </div>
+            <div class="user-name">
+                <input type="text" placeholder="用户名">
+            </div>
+            <div class="user-password">
+                <input type="password" placeholder="密码">
+            </div>
+            <button class="login-button">登录</button >
+        </div>
+    </div>
+    <div class="desktop" style="display: none;">
         <div class="background">
             <div class="blur"></div>
         </div>
