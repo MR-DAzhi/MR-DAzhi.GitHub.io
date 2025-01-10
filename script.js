@@ -1,3 +1,19 @@
+// 加载动画
+const loadingScreen = document.querySelector('.loading-screen');
+const progressBar = document.querySelector('.progress');
+
+let progress = 0;
+const interval = setInterval(() => {
+    progress += 10;
+    progressBar.style.width = `${progress}%`;
+    if (progress >= 100) {
+        clearInterval(interval);
+        loadingScreen.style.display = 'none';
+        document.querySelector('.desktop').style.display = 'flex'; // 直接显示桌面 {{ edit_1 }}
+    }
+}, 100);
+
+// 时间更新
 function updateTime() {
     const timeElement = document.getElementById('time');
     const now = new Date();
@@ -10,6 +26,7 @@ function updateTime() {
 setInterval(updateTime, 1000);
 updateTime();
 
+// 启动台
 const launchpadButton = document.querySelector('.dock-item:first-child');
 const launchpad = document.querySelector('.launchpad');
 
