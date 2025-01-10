@@ -9,3 +9,10 @@ function updateTime() {
 
 setInterval(updateTime, 1000);
 updateTime();
+
+const startButton = document.querySelector('.start-button');
+const startMenu = document.querySelector('.start-menu');
+
+startButton.addEventListener('click', () => {
+    startMenu.style.display = startMenu.style.display === 'none' ? 'block' : 'none';
+});
