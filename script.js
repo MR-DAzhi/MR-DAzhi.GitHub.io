@@ -159,12 +159,24 @@ function handleIconClick(iconId) {
 }
 
 function openSelfIntroduction() {
-    const mrdazhiMenuContent = document.getElementById('mrdazhi-menu-content');
-    mrdazhiMenuContent.innerHTML = `
+    return `
         <p>你好！我是 MR-DAzhi，一个对编程充满热情的开发者。</p>
         <p>目前正在学习前端开发技术，努力构建有趣且实用的 Web 应用。</p>
         <p>欢迎来到我的个人桌面！</p>
     `;
+}
+
+function openSelfIntroductionFromMenu() {
+    const popupWindow = document.getElementById('popupWindow');
+    const popupTitle = document.getElementById('popupTitle');
+    const popupBody = document.getElementById('popupBody');
+
+    popupTitle.textContent = '关于 MR-DAzhi';
+    popupBody.innerHTML = openSelfIntroduction();
+    popupWindow.style.display = 'block';
+
+    const mrdazhiMenu = document.getElementById('mrdazhi-menu');
+    mrdazhiMenu.style.display = 'none';
 }
 
 // 为开始菜单项添加点击事件处理程序
@@ -185,5 +197,4 @@ document.getElementById('startMenuHeader').addEventListener('click', (e) => {
     e.stopPropagation();
     const mrdazhiMenu = document.getElementById('mrdazhi-menu');
     mrdazhiMenu.style.display = 'block';
-    openSelfIntroduction();
 });
