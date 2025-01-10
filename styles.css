@@ -93,24 +93,7 @@ body {
     cursor: pointer;
 }
 
-#startMenu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-#startMenu li {
-    padding: 5px 10px;
-    cursor: pointer;
-}
-
-#startMenu li:hover {
-    background-color: #f0f0f0;
-}
-
-#contextMenu {
-    position: fixed;
-    background-color: #fff;
+...(about 16 lines omitted)...
     border: 1px solid #ccc;
     padding: 5px 0;
     z-index: 102;
