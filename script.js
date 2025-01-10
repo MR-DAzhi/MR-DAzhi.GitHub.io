@@ -162,3 +162,17 @@ document.getElementById('desktop').addEventListener('drop', (e) => {
         draggedIcon.style.top = e.clientY - draggedIcon.offsetHeight / 2 + 'px';
     }
 });
+
+function openSelfIntroduction() {
+    const popupWindow = document.getElementById('popupWindow');
+    const popupTitle = document.getElementById('popupTitle');
+    const popupBody = document.getElementById('popupBody');
+
+    popupTitle.textContent = '关于 MR-DAzhi';
+    popupBody.innerHTML = `
+        <p>你好！我是 MR-DAzhi，一个对编程充满热情的开发者。</p>
+        <p>目前正在学习前端开发技术，努力构建有趣且实用的 Web 应用。</p>
+        <p>欢迎来到我的个人桌面！</p>
+    `;
+    popupWindow.style.display = 'block';
+}
