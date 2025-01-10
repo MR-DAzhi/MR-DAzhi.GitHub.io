@@ -1,3 +1,26 @@
+// 加载动画
+const loadingScreen = document.querySelector('.loading-screen');
+const progressBar = document.querySelector('.progress');
+
+let progress = 0;
+const interval = setInterval(() => {
+    progress += 10;
+    progressBar.style.width = `${progress}%`;
+    if (progress >= 100) {
+        clearInterval(interval);
+        loadingScreen.style.display = 'none';
+        document.querySelector('.login-screen').style.display = 'flex';
+    }
+}, 100);
+
+// 登录界面
+const loginButton = document.querySelector('.login-button');
+loginButton.addEventListener('click', () => {
+    document.querySelector('.login-screen').style.display = 'none';
+    document.querySelector('.desktop').style.display = 'flex';
+});
+
+// 时间更新
 function updateTime() {
     const timeElement = document.getElementById('time');
     const now = new Date();
@@ -10,6 +33,7 @@ function updateTime() {
 setInterval(updateTime, 1000);
 updateTime();
 
+// 开始菜单
 const startButton = document.querySelector('.start-button');
 const startMenu = document.querySelector('.start-menu');
 
