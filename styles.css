@@ -5,7 +5,7 @@ body, html {
   height: 100%;
   overflow: hidden;
   background: #0078d7 url('assets/windows-wallpaper.jpg') no-repeat center center;
-  background-size: cover;
+  background-size: cover; /* 确保背景图片覆盖整个窗口 */
   font-family: Arial, sans-serif;
   color: white;
 }
@@ -29,6 +29,14 @@ body, html {
 .icon img {
   width: 64px;
   height: 64px;
+  object-fit: contain; /* 保持图片比例，不会拉伸 */
+}
+
+.icon p {
+  margin: 0;
+  font-size: 12px;
+  text-align: center;
+  color: white;
 }
 
 .window {
