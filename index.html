@@ -4,31 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>我的个人主页</title>
-    <link rel="stylesheet" href="style.css">  {{ edit_1 }}
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <header>
-        <h1>欢迎来到我的个人主页</h1>
-    </header>
-    <main>
-        <section id="about">
-            <h2>关于我</h2>
-            <p>这里是您的个人简介，可以介绍您的技能、兴趣等。</p>
-        </section>
-        <section id="projects">
-            <h2>我的项目</h2>
-            <ul>
-                <li><a href="#">项目 1</a></li>
-                <li><a href="#">项目 2</a></li>
-            </ul>
-        </section>
-        <section id="contact">
-            <h2>联系我</h2>
-            <p>邮箱：your_email@example.com</p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 我的名字</p>
-    </footer>
+    <div class="desktop">
+        <div class="tiles">
+            <div class="tile" style="background-color: #2196F3;">
+                <i class="fas fa-user"></i>
+                <span>关于我</span>
+            </div>
+            <div class="tile" style="background-color: #4CAF50;">
+                <i class="fas fa-code"></i>
+                <span>项目</span>
+            </div>
+            <div class="tile" style="background-color: #FF9800;">
+                <i class="fas fa-blog"></i>
+                <span>博客</span>
+            </div>
+            <div class="tile" style="background-color: #9C27B0;">
+                <i class="fas fa-envelope"></i>
+                <span>联系我</span>
+            </div>
+        </div>
+        <div class="taskbar">
+            <div class="start-button">
+                <i class="fas fa-windows"></i>
+            </div>
+            <div class="search-box">
+                <input type="text" placeholder="搜索...">
+            </div>
+            <div class="notification-area">
+                <span id="time"></span>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
