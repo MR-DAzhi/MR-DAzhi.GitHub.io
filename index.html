@@ -9,30 +9,31 @@
 <body>
   <div id="desktop">
     <!-- 图标 -->
-    <div class="icon" onclick="openWindow('myComputer')">
+    <div class="icon" style="top: 50px; left: 50px;">
       <img src="assets/computer-icon.png" alt="My Computer">
-      <p>我的电脑</p >
+      <p>我的电脑</p>
     </div>
-
-    <!-- 窗口 -->
-    <div id="myComputer" class="window" style="display: none;">
-      <div class="window-header">
-        <span>我的电脑</span>
-        <button onclick="closeWindow('myComputer')">X</button>
-      </div>
-      <div class="window-content">
-        <p>这里是窗口内容。</p >
-      </div>
-    </div>
-
-    <!-- 任务栏 -->
-    <div id="taskbar">
-      <button class="start-button" onclick="toggleStartMenu()">开始</button>
-      <div id="startMenu" style="display: none;">
-        <p>程序列表</p >
-      </div>
+    <div class="icon" style="top: 150px; left: 50px;">
+      <img src="assets/computer-icon.png" alt="Recycle Bin">
+      <p>回收站</p>
     </div>
   </div>
+
+  <!-- 任务栏 -->
+  <div id="taskbar">
+    <button class="start-button">开始</button>
+  </div>
+
+  <!-- 开始菜单 -->
+  <div id="startMenu">
+    <ul>
+      <li>程序 1</li>
+      <li>程序 2</li>
+      <li>程序 3</li>
+      <li>关闭</li>
+    </ul>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
