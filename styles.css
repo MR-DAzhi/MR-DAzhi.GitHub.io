@@ -76,4 +76,61 @@ body {
 
 #startMenu {
     position: absolute;
-    bottom: 40
+    bottom: 40px;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    display: none;
+    z-index: 100;
+    padding: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+#startMenuHeader {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#startMenu input[type="text"] {
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+
+#startMenu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#startMenu li {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+#startMenu li:hover {
+    background-color: #f0f0f0;
+}
+
+#contextMenu {
+    position: fixed;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 5px 0;
+    z-index: 102;
+    display: none;
+}
+
+#contextMenu div {
+    padding: 5px 15px;
+    cursor: pointer;
+}
+
+#contextMenu div:hover {
+    background-color: #f0f0f0;
+}
+
+.icon.dragging {
+    opacity: 0.5;
+}
