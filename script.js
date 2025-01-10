@@ -5,8 +5,6 @@ function toggleStartMenu() {
 
 function closeAllWindows() {
     document.getElementById('startMenu').style.display = 'none';
-    const taskbarIcons = document.getElementById('taskbar-icons');
-    taskbarIcons.innerHTML = '';
 }
 
 function updateTime() {
@@ -18,9 +16,6 @@ function updateTime() {
 
 setInterval(updateTime, 1000);
 updateTime();
-
-let isDragging = false;
-let offsetX, offsetY;
 
 //  处理桌面右键菜单的显示
 document.getElementById('desktop').addEventListener('contextmenu', (e) => {
