@@ -176,6 +176,14 @@ function closeWindow() {
     if (taskbarIcon) {
         taskbarIcons.removeChild(taskbarIcon);
     }
+    
+    // 移除所有窗口的任务栏图标
+    const allTaskbarIcons = taskbarIcons.querySelectorAll('.taskbar-icon');
+    allTaskbarIcons.forEach(icon => {
+        if (icon.alt === iconSrc) {
+            taskbarIcons.removeChild(icon);
+        }
+    });
 }
 
 function handleIconClick(iconId) {
