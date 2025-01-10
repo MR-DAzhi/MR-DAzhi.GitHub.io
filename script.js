@@ -37,6 +37,10 @@ document.addEventListener('click', (e) => {
     if (contextMenu.style.display === 'block') {
         contextMenu.style.display = 'none';
     }
+    const mrdazhiMenu = document.getElementById('mrdazhi-menu');
+    if (mrdazhiMenu.style.display === 'block') {
+        mrdazhiMenu.style.display = 'none';
+    }
 });
 
 function arrangeIcons() {
@@ -106,6 +110,18 @@ function openWindow(iconId) {
             title = '用户文件夹';
             content = '<p>这里是用户文件夹的内容。</p>';
             break;
+        case 'explorer':
+            title = '文件资源管理器';
+            content = '<p>这里是文件资源管理器的内容。</p>';
+            break;
+        case 'settings':
+            title = '设置';
+            content = '<p>这里是设置的内容。</p>';
+            break;
+        case 'controlpanel':
+            title = '控制面板';
+            content = '<p>这里是控制面板的内容。</p>';
+            break;
     }
 
     popupTitle.textContent = title;
@@ -114,7 +130,11 @@ function openWindow(iconId) {
 
     // 添加任务栏图标
     const taskbarIcon = document.createElement('img');
-    taskbarIcon.src = document.querySelector(`.icon[data-id="${iconId}"] img`).src;
+    if (document.querySelector(`.icon[data-id="${iconId}"] img`)) {
+        taskbarIcon.src = document.querySelector(`.icon[data-id="${iconId}"] img`).src;
+    } else {
+        taskbarIcon.src = 'assets/default_icon.png'; // 使用默认图标
+    }
     taskbarIcon.alt = title;
     taskbarIcon.classList.add('taskbar-icon');
     taskbarIcon.onclick = () => {
@@ -139,28 +159,31 @@ function handleIconClick(iconId) {
 }
 
 function openSelfIntroduction() {
-    const popupWindow = document.getElementById('popupWindow');
-    const popupTitle = document.getElementById('popupTitle');
-    const popupBody = document.getElementById('popupBody');
-
-    popupTitle.textContent = '关于 MR-DAzhi';
-    popupBody.innerHTML = `
+    const mrdazhiMenuContent = document.getElementById('mrdazhi-menu-content');
+    mrdazhiMenuContent.innerHTML = `
         <p>你好！我是 MR-DAzhi，一个对编程充满热情的开发者。</p>
         <p>目前正在学习前端开发技术，努力构建有趣且实用的 Web 应用。</p>
         <p>欢迎来到我的个人桌面！</p>
     `;
-    popupWindow.style.display = 'block';
 }
 
 // 为开始菜单项添加点击事件处理程序
-document.querySelector('#startMenu ul li:nth-child(1)').addEventListener('click', () => {
-    alert('打开文件资源管理器');
+document.querySelector('#startMenu ul li[data-id="explorer"]').addEventListener('click', () => {
+    openWindow('explorer');
 });
 
-document.querySelector('#startMenu ul li:nth-child(2)').addEventListener('click', () => {
-    alert('打开设置');
+document.querySelector('#startMenu ul li[data-id="settings"]').addEventListener('click', () => {
+    openWindow('settings');
 });
 
-document.querySelector('#startMenu ul li:nth-child(3)').addEventListener('click', () => {
-    alert('打开控制面板');
+document.querySelector('#startMenu ul li[data-id="controlpanel"]').addEventListener('click', () => {
+    openWindow('controlpanel');
+});
+
+// 为 MR-DAzhi 添加左键点击事件处理程序
+document.getElementById('startMenuHeader').addEventListener('click', (e) => {
+    e.stopPropagation();
+    const mrdazhiMenu = document.getElementById('mrdazhi-menu');
+    mrdazhiMenu.style.display = 'block';
+    openSelfIntroduction();
 });
