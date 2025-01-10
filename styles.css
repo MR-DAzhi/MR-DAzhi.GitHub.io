@@ -20,7 +20,6 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    /* background-color: #f0f0f0; */
     user-select: none; /* 禁止选中桌面内容 */
 }
 
@@ -31,8 +30,8 @@ body {
 }
 
 .icon img {
-    width: 50px;
-    height: 50px;
+    width: 50px; /* 恢复图标的默认宽度 */
+    height: 50px; /* 恢复图标的默认高度 */
     display: block;
     margin: 0 auto 5px;
 }
