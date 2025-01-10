@@ -4,115 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>仿 Windows 桌面</title>
-  <style>
-    /* 页面全局样式 */
-    body, html {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      height: 100%;
-      background: #0078d7 url('assets/windows-wallpaper.jpg') no-repeat center center;
-      background-size: cover;
-      font-family: Arial, sans-serif;
-      color: white;
-    }
-
-    /* 桌面图标样式 */
-    #desktop {
-      position: relative;
-      width: 100%;
-      height: calc(100% - 40px); /* 减去任务栏的高度 */
-      overflow: hidden;
-    }
-
-    .icon {
-      position: absolute;
-      text-align: center;
-      width: 80px;
-      cursor: pointer;
-    }
-
-    .icon img {
-      width: 50px;
-      height: 50px;
-      display: block;
-      margin: 0 auto;
-    }
-
-    .icon p {
-      margin: 5px 0 0;
-      font-size: 12px;
-      color: white;
-      text-shadow: 1px 1px 2px black;
-    }
-
-    /* 任务栏样式 */
-    #taskbar {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 40px;
-      background-color: #282828;
-      display: flex;
-      align-items: center;
-      padding: 0 10px;
-      box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
-    }
-
-    .start-button {
-      background-color: #0078d7;
-      color: white;
-      border: none;
-      padding: 5px 15px;
-      font-size: 14px;
-      cursor: pointer;
-      border-radius: 2px;
-    }
-
-    .start-button:hover {
-      background-color: #005fa1;
-    }
-
-    /* 开始菜单样式 */
-    #startMenu {
-      position: absolute;
-      bottom: 40px;
-      left: 10px;
-      width: 200px;
-      background-color: #2b2b2b;
-      color: white;
-      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-      display: none; /* 默认隐藏 */
-      z-index: 10;
-    }
-
-    #startMenu ul {
-      list-style: none;
-      padding: 10px;
-      margin: 0;
-    }
-
-    #startMenu li {
-      padding: 10px;
-      font-size: 14px;
-      cursor: pointer;
-    }
-
-    #startMenu li:hover {
-      background-color: #444444;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- 桌面 -->
   <div id="desktop">
     <!-- 图标 -->
-    <div class="icon" style="top: 50px; left: 50px;">
+    <div class="icon" style="top: 50px; left: 50px;" onclick="openWindow('我的电脑', '这里是我的电脑内容')">
       <img src="assets/computer-icon.png" alt="My Computer">
       <p>我的电脑</p>
     </div>
-    <div class="icon" style="top: 150px; left: 50px;">
+    <div class="icon" style="top: 150px; left: 50px;" onclick="openWindow('回收站', '这里是回收站内容')">
       <img src="assets/computer-icon.png" alt="Recycle Bin">
       <p>回收站</p>
     </div>
@@ -120,25 +21,28 @@
 
   <!-- 任务栏 -->
   <div id="taskbar">
-    <button class="start-button">开始</button>
+    <button class="start-button" onclick="toggleStartMenu()">开始</button>
   </div>
 
   <!-- 开始菜单 -->
   <div id="startMenu">
     <ul>
-      <li>文件资源管理器</li>
-      <li>设置</li>
-      <li>控制面板</li>
-      <li>关闭</li>
+      <li onclick="openWindow('文件资源管理器', '这里是文件资源管理器内容')">文件资源管理器</li>
+      <li onclick="openWindow('设置', '这里是设置内容')">设置</li>
+      <li onclick="openWindow('控制面板', '这里是控制面板内容')">控制面板</li>
+      <li onclick="closeAllWindows()">关闭</li>
     </ul>
   </div>
 
-  <script>
-    // 开始按钮控制开始菜单显示/隐藏
-    document.querySelector('.start-button').addEventListener('click', () => {
-      const startMenu = document.getElementById('startMenu');
-      startMenu.style.display = startMenu.style.display === 'block' ? 'none' : 'block';
-    });
-  </script>
+  <!-- 动态弹窗 -->
+  <div id="popupWindow" class="hidden">
+    <div id="popupContent">
+      <h3 id="popupTitle"></h3>
+      <p id="popupBody"></p>
+      <button onclick="closeWindow()">关闭</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
