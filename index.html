@@ -42,13 +42,13 @@
     <div id="startMenu">
         <div id="startMenuHeader">
             <img src="assets/user_avatar.png" alt="User Avatar" style="height: 30px; margin-right: 10px;">
-            <span>MR-DAzhi</span>
+            <span >MR-DAzhi</span>
         </div>
         <input type="text" placeholder="搜索" id="startMenuSearch">
         <ul>
-            <li>文件资源管理器</li>
-            <li>设置</li>
-            <li>控制面板</li>
+            <li data-id="explorer">文件资源管理器</li>
+            <li data-id="settings">设置</li>
+            <li data-id="controlpanel">控制面板</li>
             <li onclick="closeAllWindows()">关闭</li>
         </ul>
     </div>
@@ -73,6 +73,12 @@
     <!-- 右键菜单 -->
     <div id="contextMenu" class="hidden">
         <div onclick="arrangeIcons()">排列图标</div>
+    </div>
+
+    <!-- MR-DAzhi 左键菜单 -->
+    <div id="mrdazhi-menu" class="hidden">
+        <div id="mrdazhi-menu-content">
+        </div>
     </div>
 
     <script src="script.js"></script>
