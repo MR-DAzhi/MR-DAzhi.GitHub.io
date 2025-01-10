@@ -157,7 +157,7 @@ function openWindow(iconId) {
     taskbarIcon.alt = title;
     taskbarIcon.classList.add('taskbar-icon');
     taskbarIcon.onclick = () => {
-        popupWindow.style.display = 'block';
+        popupWindow.style.display = popupWindow.style.display === 'none' ? 'block' : 'none';
     };
     
     // 检查任务栏是否已存在相同图标
