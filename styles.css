@@ -56,7 +56,7 @@ body {
     cursor: pointer;
 }
 
-#taskbar-icons {  {{ edit_1 }}
+#taskbar-icons {
     display: flex;
     align-items: center;
     margin-left: 10px;
@@ -135,7 +135,7 @@ body {
     opacity: 0.5;
 }
 
-#popupWindow {  {{ edit_2 }}
+#popupWindow {
     position: fixed;
     top: 50%;
     left: 50%;
