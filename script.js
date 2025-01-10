@@ -34,10 +34,10 @@ document.addEventListener('click', (e) => {
     }
 });
 
-function refreshDesktop() {
-    // 这里可以添加刷新的逻辑，例如重新加载数据等
-    alert('桌面已刷新！'); // 简单的提示
-}
+// function refreshDesktop() {
+//     // 这里可以添加刷新的逻辑，例如重新加载数据等
+//     alert('桌面已刷新！'); // 简单的提示
+// }
 
 function arrangeIcons() {
     const icons = document.querySelectorAll('.icon');
