@@ -9,16 +9,9 @@ const interval = setInterval(() => {
     if (progress >= 100) {
         clearInterval(interval);
         loadingScreen.style.display = 'none';
-        document.querySelector('.login-screen').style.display = 'flex';
+        document.querySelector('.desktop').style.display = 'flex'; // 直接显示桌面 {{ edit_1 }}
     }
 }, 100);
-
-// 登录界面
-const loginButton = document.querySelector('.login-button');
-loginButton.addEventListener('click', () => {
-    document.querySelector('.login-screen').style.display = 'none';
-    document.querySelector('.desktop').style.display = 'flex';
-});
 
 // 时间更新
 function updateTime() {
