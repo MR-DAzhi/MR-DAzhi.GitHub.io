@@ -4,106 +4,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>我的个人主页</title>
-    <link rel="stylesheet" href="https://unpkg.com/ylui/dist/ylui.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <div id="app">
-        <div class="loading-screen">
-            <div class="windows-logo">
-                <i class="fab fa-windows"></i>
+    <header>
+        <div class="container">
+            <h1>您的姓名/昵称</h1>
+            <p>您的职业/简介</p>
+            <nav>
+                <a href="#about">关于我</a>
+                <a href="#projects">项目</a>
+                <a href="#contact">联系方式</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section id="projects" class="container">
+            <h2>项目</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <img src="project1.jpg" alt="项目 1">
+                    <h3>项目 1 名称</h3>
+                    <p>项目 1 描述</p>
+                    <a href="#">查看详情</a>
+                </div>
+                <div class="project-card">
+                    <img src="project2.jpg" alt="项目 2">
+                    <h3>项目 2 名称</h3>
+                    <p>项目 2 描述</p>
+                    <a href="#">查看详情</a>
+                </div>
+                <div class="project-card">
+                    <img src="project3.jpg" alt="项目 3">
+                    <h3>项目 3 名称</h3>
+                    <p>项目 3 描述</p>
+                    <a href="#">查看详情</a>
+                </div>
             </div>
-            <div class="loading-bar">
-                <div class="progress"></div>
+        </section>
+        <section id="about" class="container">
+            <h2>关于我</h2>
+            <p>
+                这里是您的个人介绍，您可以写一些关于自己的信息，例如您的技能、兴趣、经历等等。
+            </p>
+        </section>
+        <section id="contact" class="container">
+            <h2>联系方式</h2>
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label for="name">姓名</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">邮箱</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">留言</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit">发送</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 您的姓名/昵称. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
             </div>
         </div>
-        {{ edit_2 }}
-        <div class="yl-layout desktop" style="display: none;">
-            <div class="yl-layout-content">
-                <div class="desktop-icons">
-                    <div class="desktop-icon">
-                        <i class="fas fa-desktop"></i>
-                        <span>我的电脑</span>
-                    </div>
-                    <div class="desktop-icon">
-                        <i class="fas fa-recycle"></i>
-                        <span>回收站</span>
-                    </div>
-                    <div class="desktop-icon">
-                        <i class="fas fa-folder"></i>
-                        <span>文档</span>
-                    </div>
-                </div>
-                <div class="yl-grid tiles">
-                    <div class="yl-grid-item">
-                        <div class="yl-card tile" style="background-color: #3498db;">
-                            <div class="yl-card-body">
-                                <i class="fas fa-user"></i>
-                                <span>关于我</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="yl-grid-item">
-                        <div class="yl-card tile" style="background-color: #2ecc71;">
-                            <div class="yl-card-body">
-                                <i class="fas fa-code"></i>
-                                <span>项目</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="yl-grid-item">
-                        <div class="yl-card tile" style="background-color: #e67e22;">
-                            <div class="yl-card-body">
-                                <i class="fas fa-blog"></i>
-                                <span>博客</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="yl-grid-item">
-                        <div class="yl-card tile" style="background-color: #9b59b6;">
-                            <div class="yl-card-body">
-                                <i class="fas fa-envelope"></i>
-                                <span>联系我</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="yl-layout-footer">
-                <div class="yl-toolbar taskbar">
-                    <div class="yl-toolbar-item">
-                        <button class="yl-button start-button">
-                            <i class="fas fa-windows"></i>
-                        </button >
-                    </div>
-                    <div class="yl-toolbar-item">
-                        <input type="text" class="search-box" placeholder="搜索...">
-                    </div>
-                    <div class="yl-toolbar-item task-view">
-                        <i class="fas fa-th-large"></i>
-                    </div>
-                    <div class="yl-toolbar-item system-tray">
-                        <span id="time"></span>
-                        <i class="fas fa-wifi"></i>
-                        <i class="fas fa-volume-up"></i>
-                        <i class="fas fa-battery-full"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="yl-menu start-menu" style="display: none;">
-            <div class="yl-menu-content">
-                <ul class="yl-list start-menu-apps">
-                    <!-- 应用列表 -->
-                </ul>
-                <div class="start-menu-power">
-                    <i class="fas fa-power-off"></i>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script src="https://unpkg.com/ylui/dist/ylui.min.js"></script>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>
