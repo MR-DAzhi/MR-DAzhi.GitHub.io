@@ -186,7 +186,7 @@ function openSelfIntroduction() {
     return `
         <p>你好！我是 MR-DAzhi，一个对编程充满热情的开发者。</p>
         <p>目前正在学习前端开发技术，努力构建有趣且实用的 Web 应用。</p>
-        <p>欢迎来到我的个人桌面！</p>
+        <p>欢迎来到我的个人主页！</p>
     `;
 }
 
