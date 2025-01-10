@@ -9,7 +9,7 @@ const interval = setInterval(() => {
     if (progress >= 100) {
         clearInterval(interval);
         loadingScreen.style.display = 'none';
-        document.querySelector('.desktop').style.display = 'flex'; // 直接显示桌面 {{ edit_1 }}
+        document.querySelector('.desktop').style.display = 'flex'; // 直接显示桌面
     }
 }, 100);
 
