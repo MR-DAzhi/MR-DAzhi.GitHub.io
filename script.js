@@ -151,3 +151,16 @@ function openSelfIntroduction() {
     `;
     popupWindow.style.display = 'block';
 }
+
+// 为开始菜单项添加点击事件处理程序
+document.querySelector('#startMenu ul li:nth-child(1)').addEventListener('click', () => {
+    alert('打开文件资源管理器');
+});
+
+document.querySelector('#startMenu ul li:nth-child(2)').addEventListener('click', () => {
+    alert('打开设置');
+});
+
+document.querySelector('#startMenu ul li:nth-child(3)').addEventListener('click', () => {
+    alert('打开控制面板');
+});
