@@ -90,6 +90,7 @@ body {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
+    cursor: pointer;
 }
 
 #startMenu ul {
@@ -183,4 +184,16 @@ body {
 .explorer-content {
     flex: 1;
     overflow-y: auto;
+}
+
+#mrdazhi-menu {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: none;
+    z-index: 103;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
