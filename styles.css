@@ -56,6 +56,18 @@ body {
     cursor: pointer;
 }
 
+#taskbar-icons {  {{ edit_1 }}
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.taskbar-icon {
+    height: 30px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
 #taskbar-right {
     display: flex;
     align-items: center;
@@ -121,4 +133,60 @@ body {
 
 .icon.dragging {
     opacity: 0.5;
+}
+
+#popupWindow {  {{ edit_2 }}
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border: 1px solid #ccc;
+    display: none;
+    z-index: 101;
+    width: 600px;
+    height: 400px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+#popupHeader {
+    background-color: #f0f0f0;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+}
+
+#popupContent {
+    padding: 10px;
+    height: calc(100% - 40px);
+    display: flex;
+    flex-direction: column;
+}
+
+.explorer-address-bar {
+    margin-bottom: 10px;
+}
+
+.explorer-address-bar input {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+
+.explorer-toolbar {
+    margin-bottom: 10px;
+}
+
+.explorer-toolbar button {
+    margin-right: 5px;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.explorer-content {
+    flex: 1;
+    overflow-y: auto;
 }
