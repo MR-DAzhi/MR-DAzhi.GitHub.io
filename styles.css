@@ -3,10 +3,11 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-image: url('assets/background.jpg');  {{ edit_1 }}
-    background-size: cover;  {{ edit_2 }}
-    background-repeat: no-repeat;  {{ edit_3 }}
-    background-position: center;  {{ edit_4 }}
+    background-image: url('assets/background.jpg'); /* 检查路径是否正确 */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh; /* 确保 body 元素足够高 */
 }
 
 #desktop {
@@ -15,129 +16,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    /* background-color: #f0f0f0;  {{ edit_5 }} */
+    /* background-color: #f0f0f0; */
 }
 
-.icon {
-    position: absolute;
-    text-align: center;
-    cursor: pointer;
-}
-
-.icon img {
-    width: 50px;
-    height: 50px;
-    display: block;
-    margin: 0 auto 5px;
-}
-
-#taskbar {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 40px;
-    background-color: #f0f0f0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-top: 1px solid #ccc;
-}
-
-.start-button {
-    background: none;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-}
-
-#taskbar-icons {
-    display: flex;
-    align-items: center;
-    margin-left: 10px;
-}
-
-.taskbar-icon {
-    height: 30px;
-    margin-right: 5px;
-    cursor: pointer;
-}
-
-#taskbar-right {
-    display: flex;
-    align-items: center;
-    margin-right: 10px;
-}
-
-#startMenu {
-    position: absolute;
-    bottom: 40px;
-    left: 0;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    display: none;
-    z-index: 100;
-    padding: 10px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-}
-
-#startMenuHeader {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-#startMenu input[type="text"] {
-    margin-bottom: 10px;
-    padding: 5px;
-    border: 1px solid #ccc;
-}
-
-#startMenu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-#startMenu li {
-    padding: 5px 10px;
-    cursor: pointer;
-}
-
-#startMenu li:hover {
-    background-color: #f0f0f0;
-}
-
-#popupWindow {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #fff;
-    border: 1px solid #ccc;
-    padding: 0;
-    z-index: 101;
-    display: none;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-}
-
-#popupContent {
-    padding: 10px;
-}
-
-#popupHeader {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #f0f0f0;
-    padding: 5px 10px;
-    border-bottom: 1px solid #ccc;
-    cursor: move;
-}
-
-#popupHeader button {
-    background: none;
-    border: none;
-    font-size: 20px;
-    cursor: pointer;
-}
+/* ...其他样式... */
