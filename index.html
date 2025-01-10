@@ -1,83 +1,38 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的个人主页</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>仿 Windows 桌面</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>您的姓名/昵称</h1>
-            <p>您的职业/简介</p>
-            <nav>
-                <a href="#about">关于我</a>
-                <a href="#projects">项目</a>
-                <a href="#contact">联系方式</a>
-            </nav>
-        </div>
-    </header>
-    <main>
-        <section id="projects" class="container">
-            <h2>项目</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <img src="project1.jpg" alt="项目 1">
-                    <h3>项目 1 名称</h3>
-                    <p>项目 1 描述</p>
-                    <a href="#">查看详情</a>
-                </div>
-                <div class="project-card">
-                    <img src="project2.jpg" alt="项目 2">
-                    <h3>项目 2 名称</h3>
-                    <p>项目 2 描述</p>
-                    <a href="#">查看详情</a>
-                </div>
-                <div class="project-card">
-                    <img src="project3.jpg" alt="项目 3">
-                    <h3>项目 3 名称</h3>
-                    <p>项目 3 描述</p>
-                    <a href="#">查看详情</a>
-                </div>
-            </div>
-        </section>
-        <section id="about" class="container">
-            <h2>关于我</h2>
-            <p>
-                这里是您的个人介绍，您可以写一些关于自己的信息，例如您的技能、兴趣、经历等等。
-            </p>
-        </section>
-        <section id="contact" class="container">
-            <h2>联系方式</h2>
-            <form action="#" method="post">
-                <div class="form-group">
-                    <label for="name">姓名</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">邮箱</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">留言</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
-                </div>
-                <button type="submit">发送</button>
-            </form>
-        </section>
-    </main>
-    <footer>
-        <div class="container">
-            <p>&copy; 2023 您的姓名/昵称. All rights reserved.</p>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-            </div>
-        </div>
-    </footer>
-    <script src="script.js"></script>
+  <div id="desktop">
+    <!-- 图标 -->
+    <div class="icon" onclick="openWindow('myComputer')">
+      < img src="computer-icon.png" alt="My Computer">
+      <p>我的电脑</p >
+    </div>
+
+    <!-- 窗口 -->
+    <div id="myComputer" class="window" style="display: none;">
+      <div class="window-header">
+        <span>我的电脑</span>
+        <button onclick="closeWindow('myComputer')">X</button>
+      </div>
+      <div class="window-content">
+        <p>这里是窗口内容。</p >
+      </div>
+    </div>
+
+    <!-- 任务栏 -->
+    <div id="taskbar">
+      <button class="start-button" onclick="toggleStartMenu()">开始</button>
+      <div id="startMenu" style="display: none;">
+        <p>程序列表</p >
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
