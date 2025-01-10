@@ -2,187 +2,104 @@ body {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-    overflow: hidden;
-}
-
-#app {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-}
-
-/* 加载动画 */
-.loading-screen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
-.windows-logo {
-    font-size: 50px;
-    color: #3498db;
-    margin-bottom: 20px;
-}
-
-.loading-bar {
-    width: 200px;
-    height: 5px;
-    background-color: #f0f0f0;
-    border-radius: 5px;
-}
-
-.progress {
-    width: 0%;
-    height: 100%;
-    background-color: #3498db;
-    border-radius: 5px;
-    transition: width 0.5s ease-in-out;
-}
-
-/* 登录界面 */
-.login-screen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
-}
-
-.login-box {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 5px;
-    text-align: center;
-}
-
-.user-avatar {
-    font-size: 80px;
-    margin-bottom: 20px;
-}
-
-.user-name input,
-.user-password input {
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-}
-
-.login-button {
-    padding: 10px 20px;
-    background-color: #3498db;
-    color: #fff;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-}
-
-/* 桌面 */
-.desktop {
-    flex: 1;
-    background-image: url('win10-background.jpg'); /* 替换为您的背景图片 */
-    background-size: cover;
-    background-position: center;
-    position: relative;
-}
-
-.desktop-icons {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    display: flex;
-    flex-direction: column;
-}
-
-.desktop-icon {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 10px;
-    color: #fff;
-    cursor: pointer;
-}
-
-.desktop-icon i {
-    font-size: 30px;
-    margin-bottom: 5px;
-}
-
-.tiles {
-    padding: 20px;
-}
-
-.tile {
-    color: #fff;
-    cursor: pointer;
-    transition: transform 0.2s ease-in-out;
-}
-
-.tile:hover {
-    transform: scale(1.05);
-}
-
-.tile i {
-    font-size: 30px;
-    margin-bottom: 5px;
-}
-
-.taskbar {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
-}
-
-.start-button {
-    color: #fff;
-}
-
-.search-box {
-    padding: 5px;
-    border: none;
-    border-radius: 3px;
-    background-color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
     color: #333;
 }
 
-.system-tray {
-    display: flex;
-    align-items: center;
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-.system-tray i {
-    margin-left: 10px;
+header {
+    background-color: #f0f0f0;
+    padding: 20px 0;
+    text-align: center;
 }
 
-.start-menu {
-    position: absolute;
-    bottom: 50px;
-    left: 10px;
-    background-color: rgba(0, 0, 0, 0.8);
+header h1 {
+    margin-bottom: 10px;
+}
+
+header nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+main section {
+    padding: 40px 0;
+}
+
+main h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+}
+
+.project-card img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.project-card a {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    background-color: #3498db;
     color: #fff;
-    padding: 10px;
+    padding: 10px 20px;
     border-radius: 5px;
 }
 
-.start-menu-apps {
-    /* 应用列表样式 */
+.form-group {
+    margin-bottom: 15px;
 }
 
-.start-menu-power {
-    text-align: center;
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
     padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
+}
+
+footer {
+    background-color: #f0f0f0;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.social-links a {
+    margin: 0 10px;
+    color: #333;
+    font-size: 20px;
 }
