@@ -92,12 +92,6 @@ body {
     margin-bottom: 10px;
 }
 
-#startMenu input[type="text"] {
-    margin-bottom: 10px;
-    padding: 5px;
-    border: 1px solid #ccc;
-}
-
 #startMenu ul {
     list-style: none;
     padding: 0;
