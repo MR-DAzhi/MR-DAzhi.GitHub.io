@@ -204,3 +204,8 @@ body {
 .icon.dragging {
     opacity: 0.5;
 }
+
+.self-intro-button {
+    margin-left: 10px;
+    cursor: pointer;
+}
