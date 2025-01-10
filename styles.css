@@ -104,6 +104,8 @@ body {
 }
 
 #startMenu ul li {
+    display: flex;  {{ edit_1 }}
+    align-items: center;  {{ edit_1 }}
     padding: 5px 10px;
     cursor: pointer;
 }
@@ -210,4 +212,11 @@ body {
 
 #mrdazhi-menu-content div:hover {
     background-color: #f0f0f0;
+}
+
+.start-menu-icon {  {{ edit_2 }}
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    vertical-align: middle;
 }
