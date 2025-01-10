@@ -1,16 +1,24 @@
-// 获取开始按钮和菜单
-const startButton = document.querySelector('.start-button');
-const startMenu = document.querySelector('#startMenu');
+function toggleStartMenu() {
+  const menu = document.getElementById('startMenu');
+  menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+}
 
-// 点击开始按钮，切换菜单显示状态
-startButton.addEventListener('click', () => {
-  const isMenuVisible = startMenu.style.display === 'block';
-  startMenu.style.display = isMenuVisible ? 'none' : 'block';
-});
+function openWindow(title, content) {
+  const popup = document.getElementById('popupWindow');
+  document.getElementById('popupTitle').innerText = title;
+  document.getElementById('popupBody').innerText = content;
+  popup.style.display = 'block';
 
-// 点击其他地方关闭菜单
-document.addEventListener('click', (event) => {
-  if (!startButton.contains(event.target) && !startMenu.contains(event.target)) {
-    startMenu.style.display = 'none';
-  }
-});
+  // 隐藏开始菜单
+  const menu = document.getElementById('startMenu');
+  menu.style.display = 'none';
+}
+
+function closeWindow() {
+  const popup = document.getElementById('popupWindow');
+  popup.style.display = 'none';
+}
+
+function closeAllWindows() {
+  closeWindow();
+}
