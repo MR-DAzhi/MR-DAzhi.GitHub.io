@@ -47,15 +47,29 @@ function arrangeIcons() {
     const icons = document.querySelectorAll('.icon');
     let top = 50;
     let left = 50;
+    let row = 0;
+    let col = 0;
+    const iconWidth = 100;
+    const iconHeight = 100;
+    const desktopWidth = document.getElementById('desktop').offsetWidth;
+    const maxCols = Math.floor((desktopWidth - 50) / iconWidth);
+
     icons.forEach(icon => {
         icon.style.top = top + 'px';
         icon.style.left = left + 'px';
-        left += 100;
-        if (left > window.innerWidth - 100) {
+        col++;
+        left += iconWidth;
+        if (col >= maxCols) {
+            col = 0;
             left = 50;
-            top += 100;
+            row++;
+            top += iconHeight;
         }
     });
+}
+
+function refreshDesktop() {
+    window.location.reload();
 }
 
 // 实现图标拖动
