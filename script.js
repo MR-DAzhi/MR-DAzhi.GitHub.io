@@ -9,9 +9,16 @@ const interval = setInterval(() => {
     if (progress >= 100) {
         clearInterval(interval);
         loadingScreen.style.display = 'none';
-        document.querySelector('.desktop').style.display = 'flex'; // 直接显示桌面
+        document.querySelector('.login-screen').style.display = 'flex';
     }
 }, 100);
+
+// 登录界面
+const loginButton = document.querySelector('.login-button');
+loginButton.addEventListener('click', () => {
+    document.querySelector('.login-screen').style.display = 'none';
+    document.querySelector('.desktop').style.display = 'flex';
+});
 
 // 时间更新
 function updateTime() {
@@ -26,10 +33,10 @@ function updateTime() {
 setInterval(updateTime, 1000);
 updateTime();
 
-// 启动台
-const launchpadButton = document.querySelector('.dock-item:first-child');
-const launchpad = document.querySelector('.launchpad');
+// 开始菜单
+const startButton = document.querySelector('.start-button');
+const startMenu = document.querySelector('.start-menu');
 
-launchpadButton.addEventListener('click', () => {
-    launchpad.style.display = launchpad.style.display === 'none' ? 'block' : 'none';
+startButton.addEventListener('click', () => {
+    startMenu.style.display = startMenu.style.display === 'none' ? 'block' : 'none';
 });
