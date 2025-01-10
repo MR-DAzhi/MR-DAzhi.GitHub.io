@@ -1,18 +1,89 @@
-function openWindow(id) {
-  const windowElement = document.getElementById(id);
-  windowElement.style.display = 'block';
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #0078d7 url('assets/windows-wallpaper.jpg') no-repeat center center;
+  background-size: cover;
+  font-family: Arial, sans-serif;
+  color: white;
 }
 
-function closeWindow(id) {
-  const windowElement = document.getElementById(id);
-  windowElement.style.display = 'none';
+#desktop {
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
-function toggleStartMenu() {
-  const startMenu = document.getElementById('startMenu');
-  if (startMenu.style.display === 'none') {
-    startMenu.style.display = 'block';
-  } else {
-    startMenu.style.display = 'none';
-  }
+.icon {
+  width: 80px;
+  text-align: center;
+  margin: 10px;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  cursor: pointer;
+}
+
+.icon img {
+  width: 64px;
+  height: 64px;
+}
+
+.window {
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  width: 300px;
+  height: 200px;
+  background: white;
+  color: black;
+  border: 2px solid #0078d7;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.window-header {
+  background: #0078d7;
+  color: white;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: move;
+}
+
+.window-content {
+  padding: 10px;
+}
+
+#taskbar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background: #2d2d2d;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.start-button {
+  background: #0078d7;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+#startMenu {
+  position: absolute;
+  bottom: 50px;
+  left: 10px;
+  width: 200px;
+  background: #2d2d2d;
+  border: 1px solid #0078d7;
+  padding: 10px;
 }
