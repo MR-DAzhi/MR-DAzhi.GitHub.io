@@ -3,74 +3,7 @@ function toggleStartMenu() {
     startMenu.style.display = startMenu.style.display === 'none' ? 'block' : 'none';
 }
 
-function openWindow(title, content) {
-    if (title === '我的电脑') {
-        // 如果点击的是“我的电脑”，则不执行后续的弹窗显示代码
-        return;
-    }
-
-    const popupWindow = document.getElementById('popupWindow');
-    const popupTitle = document.getElementById('popupTitle');
-    const popupBody = document.getElementById('popupBody');
-
-    popupTitle.textContent = title;
-
-    //  根据窗口标题设置不同的内容结构
-    if (title === '我的电脑') {
-        popupBody.innerHTML = `
-            <div class="explorer-address-bar">
-                <span>此电脑</span>
-            </div>
-            <div class="explorer-toolbar">
-                <!-- 这里可以添加工具栏按钮 -->
-            </div>
-            <div class="explorer-content">
-                <!--  “我的电脑”窗口打开时，内容区域为空白 -->
-            </div>
-        `;
-    } else {
-        popupBody.textContent = content; // 其他窗口保持原有内容
-    }
-
-    popupWindow.style.display = 'block';
-
-    // 添加任务栏图标
-    const taskbarIcons = document.getElementById('taskbar-icons');
-    const taskbarIcon = document.createElement('img');
-    taskbarIcon.alt = title;
-    taskbarIcon.classList.add('taskbar-icon');
-    taskbarIcon.onclick = () => {
-        popupWindow.style.display = 'block';
-    };
-
-    if (title === '我的电脑') {
-        // 如果点击的是“我的电脑”，则不添加任务栏图标
-        return;
-    } else if (title === '回收站') {
-        taskbarIcon.src = 'assets/recycle_bin.png';
-    } else if (title === '网络') {
-        taskbarIcon.src = 'assets/network.png';
-    } else if (title === '用户文件夹') {
-        taskbarIcon.src = 'assets/user_folder.png';
-    } else {
-        taskbarIcon.src = 'assets/app_icon.png'; // 默认图标
-    }
-
-    taskbarIcons.appendChild(taskbarIcon);
-}
-
-function closeWindow() {
-    document.getElementById('popupWindow').style.display = 'none';
-    // 移除任务栏图标
-    const taskbarIcons = document.getElementById('taskbar-icons');
-    const icons = taskbarIcons.querySelectorAll('.taskbar-icon');
-    if (icons.length > 0) {
-        taskbarIcons.removeChild(icons[icons.length - 1]);
-    }
-}
-
 function closeAllWindows() {
-    document.getElementById('popupWindow').style.display = 'none';
     document.getElementById('startMenu').style.display = 'none';
     const taskbarIcons = document.getElementById('taskbar-icons');
     taskbarIcons.innerHTML = '';
