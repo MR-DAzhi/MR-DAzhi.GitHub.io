@@ -84,3 +84,7 @@ document.getElementById('desktop').addEventListener('drop', (e) => {
         draggedIcon.style.top = e.clientY - draggedIcon.offsetHeight / 2 + 'px';
     }
 });
+
+function handleIconClick(iconId) {
+    console.log('Icon clicked:', iconId);
+}
