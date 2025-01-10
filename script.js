@@ -92,9 +92,12 @@ document.getElementById('desktop').addEventListener('dragover', (e) => {
 });
 
 document.getElementById('desktop').addEventListener('drop', (e) => {
+    e.preventDefault();
     if (draggedIcon) {
-        draggedIcon.style.left = e.clientX - draggedIcon.offsetWidth / 2 + 'px';
-        draggedIcon.style.top = e.clientY - draggedIcon.offsetHeight / 2 + 'px';
+        const x = e.clientX - document.getElementById('desktop').offsetLeft - draggedIcon.offsetWidth / 2;
+        const y = e.clientY - document.getElementById('desktop').offsetTop - draggedIcon.offsetHeight / 2;
+        draggedIcon.style.left = x + 'px';
+        draggedIcon.style.top = y + 'px';
     }
 });
 
@@ -147,7 +150,7 @@ function openWindow(iconId) {
     if (document.querySelector(`.icon[data-id="${iconId}"] img`)) {
         taskbarIcon.src = document.querySelector(`.icon[data-id="${iconId}"] img`).src;
     } else {
-        taskbarIcon.src = 'assets/default_icon.png'; // 使用默认图标
+        taskbarIcon.src = 'assets/app_icon.png'; // 使用默认图标
     }
     taskbarIcon.alt = title;
     taskbarIcon.classList.add('taskbar-icon');
