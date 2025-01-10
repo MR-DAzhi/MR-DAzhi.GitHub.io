@@ -4,78 +4,115 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>我的个人主页</title>
+    <link rel="stylesheet" href="https://unpkg.com/ylui/dist/ylui.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <div class="loading-screen">
-        <div class="windows-logo">
-            <i class="fab fa-apple"></i>
+    <div id="app">
+        <div class="loading-screen">
+            <div class="windows-logo">
+                <i class="fab fa-windows"></i>
+            </div>
+            <div class="loading-bar">
+                <div class="progress"></div>
+            </div>
         </div>
-        <div class="loading-bar">
-            <div class="progress"></div>
+        <div class="login-screen" style="display: none;">
+            <div class="login-box">
+                <div class="user-avatar">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <div class="user-name">
+                    <input type="text" placeholder="用户名">
+                </div>
+                <div class="user-password">
+                    <input type="password" placeholder="密码">
+                </div>
+                <button class="login-button">登录</button >
+            </div>
+        </div>
+        <div class="yl-layout desktop" style="display: none;">
+            <div class="yl-layout-content">
+                <div class="desktop-icons">
+                    <div class="desktop-icon">
+                        <i class="fas fa-recycle"></i>
+                        <span>回收站</span>
+                    </div>
+                    <div class="desktop-icon">
+                        <i class="fas fa-folder"></i>
+                        <span>我的电脑</span>
+                    </div>
+                </div>
+                <div class="yl-grid tiles">
+                    <div class="yl-grid-item">
+                        <div class="yl-card tile" style="background-color: #3498db;">
+                            <div class="yl-card-body">
+                                <i class="fas fa-user"></i>
+                                <span>关于我</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="yl-grid-item">
+                        <div class="yl-card tile" style="background-color: #2ecc71;">
+                            <div class="yl-card-body">
+                                <i class="fas fa-code"></i>
+                                <span>项目</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="yl-grid-item">
+                        <div class="yl-card tile" style="background-color: #e67e22;">
+                            <div class="yl-card-body">
+                                <i class="fas fa-blog"></i>
+                                <span>博客</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="yl-grid-item">
+                        <div class="yl-card tile" style="background-color: #9b59b6;">
+                            <div class="yl-card-body">
+                                <i class="fas fa-envelope"></i>
+                                <span>联系我</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="yl-layout-footer">
+                <div class="yl-toolbar taskbar">
+                    <div class="yl-toolbar-item">
+                        <button class="yl-button start-button">
+                            <i class="fas fa-windows"></i>
+                        </button >
+                    </div>
+                    <div class="yl-toolbar-item">
+                        <input type="text" class="search-box" placeholder="搜索...">
+                    </div>
+                    <div class="yl-toolbar-item task-view">
+                        <i class="fas fa-th-large"></i>
+                    </div>
+                    <div class="yl-toolbar-item system-tray">
+                        <span id="time"></span>
+                        <i class="fas fa-wifi"></i>
+                        <i class="fas fa-volume-up"></i>
+                        <i class="fas fa-battery-full"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yl-menu start-menu" style="display: none;">
+            <div class="yl-menu-content">
+                <ul class="yl-list start-menu-apps">
+                    <!-- 应用列表 -->
+                </ul>
+                <div class="start-menu-power">
+                    <i class="fas fa-power-off"></i>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="login-screen">
-        <div class="login-box">
-            <div class="user-avatar">
-                <i class="fas fa-user-circle"></i>
-            </div>
-            <div class="user-name">
-                <input type="text" placeholder="用户名">
-            </div>
-            <div class="user-password">
-                <input type="password" placeholder="密码">
-            </div>
-            <button class="login-button">登录</button >
-        </div>
-    </div>
-    <div class="desktop" style="display: none;">
-        <div class="background">
-            <div class="blur"></div>
-        </div>
-        <div class="menu-bar">
-            <div class="apple-icon">
-                <i class="fab fa-apple"></i>
-            </div>
-            <div class="app-menu">
-                <span>Finder</span>
-            </div>
-            <div class="status-bar">
-                <span id="time"></span>
-                <i class="fas fa-wifi"></i>
-                <i class="fas fa-volume-up"></i>
-                <i class="fas fa-battery-full"></i>
-            </div>
-        </div>
-        <div class="dock">
-            <div class="dock-item">
-                <i class="fas fa-rocket"></i>
-                <span>启动台</span>
-            </div>
-            <div class="dock-item">
-                <i class="fas fa-user"></i>
-                <span>关于我</span>
-            </div>
-            <div class="dock-item">
-                <i class="fas fa-code"></i>
-                <span>项目</span>
-            </div>
-            <div class="dock-item">
-                <i class="fas fa-blog"></i>
-                <span>博客</span>
-            </div>
-            <div class="dock-item">
-                <i class="fas fa-envelope"></i>
-                <span>联系我</span>
-            </div>
-        </div>
-        <div class="launchpad">
-            <div class="launchpad-apps">
-                <!-- 启动台应用图标 -->
-            </div>
-        </div>
-    </div>
+    <script src="https://unpkg.com/ylui/dist/ylui.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
