@@ -7,6 +7,8 @@ function closeAllWindows() {
     document.getElementById('startMenu').style.display = 'none';
     const taskbarIcons = document.getElementById('taskbar-icons');
     taskbarIcons.innerHTML = '';
+    const popupWindow = document.getElementById('popupWindow');
+    popupWindow.style.display = 'none';
 }
 
 function updateTime() {
@@ -157,7 +159,12 @@ function openWindow(iconId) {
     taskbarIcon.onclick = () => {
         popupWindow.style.display = 'block';
     };
-    taskbarIcons.appendChild(taskbarIcon);
+    
+    // 检查任务栏是否已存在相同图标
+    const existingIcon = taskbarIcons.querySelector(`img[alt="${title}"]`);
+    if (!existingIcon) {
+        taskbarIcons.appendChild(taskbarIcon);
+    }
 }
 
 function closeWindow() {
