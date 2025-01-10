@@ -1,62 +1,72 @@
-// ...之前的 JavaScript 代码...
-
-document.getElementById('desktop').addEventListener('contextmenu', (e) => {  {{ edit_3 }}
-    e.preventDefault();
-    const contextMenu = document.getElementById('contextMenu');
-    contextMenu.style.left = e.clientX + 'px';
-    contextMenu.style.top = e.clientY + 'px';
-    contextMenu.style.display = 'block';
-});
-
-document.addEventListener('click', (e) => {
-    const contextMenu = document.getElementById('contextMenu');
-    if (contextMenu.style.display === 'block') {
-        contextMenu.style.display = 'none';
-    }
-});
-
-function refreshDesktop() {
-    // 这里可以添加刷新的逻辑，例如重新加载数据等
-    alert('桌面已刷新！'); // 简单的提示
+function toggleStartMenu() {
+    const startMenu = document.getElementById('startMenu');
+    startMenu.style.display = startMenu.style.display === 'none' ? 'block' : 'none';
 }
 
-function arrangeIcons() {
-    const icons = document.querySelectorAll('.icon');
-    let top = 50;
-    let left = 50;
-    icons.forEach(icon => {
-        icon.style.top = top + 'px';
-        icon.style.left = left + 'px';
-        left += 100;
-        if (left > window.innerWidth - 100) {
-            left = 50;
-            top += 100;
-        }
-    });
+function openWindow(title, content) {
+    const popupWindow = document.getElementById('popupWindow');
+    const popupTitle = document.getElementById('popupTitle');
+    const popupBody = document.getElementById('popupBody');
+
+    popupTitle.textContent = title;
+    popupBody.textContent = content;
+    popupWindow.style.display = 'block';
+
+    // 添加任务栏图标
+    const taskbarIcons = document.getElementById('taskbar-icons');
+    const taskbarIcon = document.createElement('img');
+    taskbarIcon.src = 'assets/app_icon.png';
+    taskbarIcon.alt = title;
+    taskbarIcon.classList.add('taskbar-icon');
+    taskbarIcon.onclick = () => {
+        popupWindow.style.display = 'block';
+    };
+    taskbarIcons.appendChild(taskbarIcon);
 }
 
-// 实现图标拖动
-let draggedIcon = null;
-
-document.querySelectorAll('.icon').forEach(icon => {
-    icon.addEventListener('dragstart', (e) => {
-        draggedIcon = e.target;
-        icon.classList.add('dragging');
-    });
-
-    icon.addEventListener('dragend', (e) => {
-        draggedIcon.classList.remove('dragging');
-        draggedIcon = null;
-    });
-});
-
-document.getElementById('desktop').addEventListener('dragover', (e) => {
-    e.preventDefault();
-});
-
-document.getElementById('desktop').addEventListener('drop', (e) => {
-    if (draggedIcon) {
-        draggedIcon.style.left = e.clientX - draggedIcon.offsetWidth / 2 + 'px';
-        draggedIcon.style.top = e.clientY - draggedIcon.offsetHeight / 2 + 'px';
+function closeWindow() {
+    document.getElementById('popupWindow').style.display = 'none';
+    // 移除任务栏图标
+    const taskbarIcons = document.getElementById('taskbar-icons');
+    const icons = taskbarIcons.querySelectorAll('.taskbar-icon');
+    if (icons.length > 0) {
+        taskbarIcons.removeChild(icons[icons.length - 1]);
     }
+}
+
+function closeAllWindows() {
+    document.getElementById('popupWindow').style.display = 'none';
+    document.getElementById('startMenu').style.display = 'none';
+    const taskbarIcons = document.getElementById('taskbar-icons');
+    taskbarIcons.innerHTML = '';
+}
+
+function updateTime() {
+    const now = new Date();
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    document.getElementById('time').textContent = `${hours}:${minutes}`;
+}
+
+setInterval(updateTime, 1000);
+updateTime();
+
+let isDragging = false;
+let offsetX, offsetY;
+
+document.getElementById('popupHeader').addEventListener('mousedown', (e) => {
+    isDragging = true;
+    offsetX = e.clientX - document.getElementById('popupWindow').offsetLeft;
+    offsetY = e.clientY - document.getElementById('popupWindow').offsetTop;
+});
+
+document.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    const popupWindow = document.getElementById('popupWindow');
+    popupWindow.style.left = (e.clientX - offsetX) + 'px';
+    popupWindow.style.top = (e.clientY - offsetY) + 'px';
+});
+
+document.addEventListener('mouseup', () => {
+    isDragging = false;
 });
