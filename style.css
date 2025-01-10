@@ -10,9 +10,10 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-image: url('win.jpg'); /* 修改这里 */ {{ edit_1 }}
+    background-image: url('win.jpg');
     background-size: cover;
     background-position: center;
+    background-color: transparent; /* 添加这一行 */ {{ edit_1 }}
 }
 
 .tiles {
