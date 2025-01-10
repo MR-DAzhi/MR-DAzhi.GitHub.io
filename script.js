@@ -80,7 +80,7 @@ document.getElementById('desktop').addEventListener('drop', (e) => {
     }
 });
 
-function openWindow(iconId) {  {{ edit_2 }}
+function openWindow(iconId) {
     const popupWindow = document.getElementById('popupWindow');
     const popupTitle = document.getElementById('popupTitle');
     const popupBody = document.getElementById('popupBody');
@@ -123,7 +123,7 @@ function openWindow(iconId) {  {{ edit_2 }}
     taskbarIcons.appendChild(taskbarIcon);
 }
 
-function closeWindow() {  {{ edit_2 }}
+function closeWindow() {
     const popupWindow = document.getElementById('popupWindow');
     popupWindow.style.display = 'none';
     const taskbarIcons = document.getElementById('taskbar-icons');
@@ -134,7 +134,7 @@ function closeWindow() {  {{ edit_2 }}
     }
 }
 
-function handleIconClick(iconId) {  {{ edit_2 }}
+function handleIconClick(iconId) {
     openWindow(iconId);
 }
 
