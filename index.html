@@ -1,27 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>仿 Windows 桌面</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
     <div id="desktop">
         <!-- 图标 -->
-        <div class="icon" draggable="true" style="top: 50px; left: 50px;" data-id="mycomputer" onclick="handleIconClick('mycomputer')">
+        <div class="icon" draggable="true" style="top: 50px; left: 50px;" data-id="mycomputer" onclick="openWindow('mycomputer')">  {{ edit_1 }}
             <img src="assets/this_pc.png" alt="My Computer">
             <p>我的电脑</p>
         </div>
-        <div class="icon" draggable="true" style="top: 150px; left: 50px;" data-id="recyclebin" onclick="handleIconClick('recyclebin')">
+        <div class="icon" draggable="true" style="top: 150px; left: 50px;" data-id="recyclebin" onclick="openWindow('recyclebin')">  {{ edit_1 }}
             <img src="assets/recycle_bin.png" alt="Recycle Bin">
             <p>回收站</p>
         </div>
-        <div class="icon" draggable="true" style="top: 50px; left: 150px;" data-id="network" onclick="handleIconClick('network')">
+        <div class="icon" draggable="true" style="top: 50px; left: 150px;" data-id="network" onclick="openWindow('network')">  {{ edit_1 }}
             <img src="assets/network.png" alt="Network">
             <p>网络</p>
         </div>
-        <div class="icon" draggable="true" style="top: 150px; left: 150px;" data-id="userfolder" onclick="handleIconClick('userfolder')">
+        <div class="icon" draggable="true" style="top: 150px; left: 150px;" data-id="userfolder" onclick="openWindow('userfolder')">  {{ edit_1 }}
             <img src="assets/user_folder.png" alt="User Folder">
             <p>用户文件夹</p>
         </div>
@@ -32,6 +23,7 @@
         <button class="start-button" onclick="toggleStartMenu()">
             <img src="assets/windows_logo.png" alt="Start" style="height: 20px; vertical-align: middle;">
         </button>
+        <div id="taskbar-icons"></div>  {{ edit_2 }}
         <div id="taskbar-right">
             <span id="time"></span>
         </div>
@@ -52,9 +44,28 @@
         </ul>
     </div>
 
+    <!-- 动态弹窗 -->
+    <div id="popupWindow" class="hidden">  {{ edit_3 }}
+        <div id="popupHeader">
+            <span id="popupTitle"></span>
+            <button onclick="closeWindow()">X</button>
+        </div>
+        <div id="popupContent">
+            <div class="explorer-address-bar">
+                <input type="text" placeholder="地址栏" class="address-bar">
+            </div>
+            <div class="explorer-toolbar">
+                <button>后退</button>
+                <button>前进</button>
+                <button>刷新</button>
+            </div>
+            <div id="popupBody" class="explorer-content">
+            </div>
+        </div>
+    </div>
+
     <!-- 右键菜单 -->
     <div id="contextMenu" class="hidden">
-        <div  /* onclick="refreshDesktop()" */ >刷新</div>
         <div onclick="arrangeIcons()">排列图标</div>
     </div>
 
